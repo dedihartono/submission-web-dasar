@@ -1,0 +1,284 @@
+:root {
+  --purple: #6d0e6aff;
+  --dark-purple: #150d1fff;
+  --platinum: #ede5e6ff;
+  --davys-gray: #615c67ff;
+  --raisin-black: #1e1928ff;
+}
+
+:root {
+  --primary-background: var(--purple);
+  --primary-text: var(--dark-purple);
+}
+
+:root {
+  --secondary-background: var(--platinum);
+  --secondary-text: var(--davys-gray);
+}
+
+:root {
+  --tertiary-background: var(--davys-gray);
+  --tertiary-text: var(--raisin-black);
+}
+
+.primary-background {
+  background-color: var(--primary-background);
+  color: var(--platinum);
+}
+
+.primary-text {
+  color: var(--primary-text);
+}
+
+.secondary-background {
+  background-color: var(--secondary-background);
+  color: var(--raisin-black);
+}
+
+.secondary-text {
+  color: var(--secondary-text);
+}
+
+.tertiary-background {
+  background-color: var(--tertiary-background);
+  color: var(--platinum);
+}
+
+.tertiary-text {
+  color: var(--tertiary-text);
+}
+
+body {
+  background-color: var(--dark-purple);
+  color: var(--platinum);
+  margin: 0;
+  padding: 0;
+  font-family: "Comic Neue", cursive;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+#content {
+  flex-grow: 1;
+}
+
+aside {
+  width: 30%;
+  padding: 10px;
+}
+
+
+nav.primary {
+  background-color: var(--primary-background);
+  color: var(--tertiary-background);
+  display: flex;
+  justify-content: space-between; /* Navbar diletakkan di antara brand dan menu */
+  align-items: center; /* Menyusun vertikal elemen-elemen dalam navbar */
+  padding: 10px 20px;
+}
+
+nav .brand {
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end; /* Menu diletakkan di sisi kanan */
+}
+
+nav li {
+  padding: 15px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav li {
+    padding: 10px;
+  }
+
+  aside {
+    visibility: hidden;
+  }
+}
+
+/* CSS for desktop view */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: var(--primary-background);
+  color: #fff;
+}
+
+.nav-links {
+  list-style-type: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-right: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+}
+
+
+.nav-links li:hover {
+  background-color: var(--raisin-black);
+}
+
+/* CSS for mobile view */
+@media (max-width: 768px) {
+  .menu-button {
+      display: block;
+      cursor: pointer;
+  }
+
+  .bar {
+      width: 30px;
+      height: 3px;
+      background-color: #fff;
+      margin: 5px 0;
+      transition: 0.4s;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0; /* Align to the right */
+    background-color: var(--primary-background);
+    width: 100%;
+    z-index: 1;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+}
+
+/* CSS for the carousel */
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel {
+  display: flex;
+  width: 300%;
+  transition: transform 0.5s ease;
+}
+
+.carousel img {
+  width: calc(100% / 3);
+  height: auto;
+  object-fit: cover;
+  max-height: 580px;
+}
+
+.carousel-button-container {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.carousel-button:first-child {
+  margin-left: 10;
+}
+
+.carousel-button:last-child {
+  margin-right: 10;
+}
+
+.carousel-button {
+  cursor: pointer;
+  width: 40px; /* Lebar dan tinggi untuk membuat tombol menjadi lingkaran */
+  height: 40px;
+  border-radius: 50%; /* Membuat tombol menjadi lingkaran */
+  background-color: #333;
+  color: #fff;
+  border: none;
+  margin: 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carousel-button:hover {
+  background-color: #555;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--raisin-black);
+  color: var(--platinum);
+  padding: 20px;
+}
+
+.logo-container {
+  margin-bottom: 20px;
+}
+
+.social-container {
+  display: flex;
+  gap: 20px;
+}
+
+.social-container span {
+  font-style: italic;
+}
+.social-item svg {
+  max-width: 30px;
+  color: var(--platinum);
+}
+
+.navbar-help ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.navbar-help ul li {
+  margin-bottom: 10px; /
+}
+
+footer div:last-child {
+  margin-top: 20px;
+}
+
+footer img {
+  max-width: 80px;
+}
